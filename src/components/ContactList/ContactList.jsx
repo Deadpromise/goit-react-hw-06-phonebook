@@ -7,6 +7,7 @@ import { getContacts, getFilter } from 'redux/selectors';
 const ContactList = () => {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
+
   const getFiltredContacts = () => {
     const normalizedFilter = filter.value.toLocaleLowerCase();
     return contacts.filter(contact =>
@@ -14,6 +15,7 @@ const ContactList = () => {
     );
   };
   const filteredContacts = getFiltredContacts();
+  // const filteredContacts = contacts;
   return (
     <ul>
       {filteredContacts.map(({ id, name, number }) => (
