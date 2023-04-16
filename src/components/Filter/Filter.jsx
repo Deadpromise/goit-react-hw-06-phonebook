@@ -1,8 +1,9 @@
+import { FormInput } from 'components/common/FormInput.styled';
+import { FormLabel } from 'components/common/FormLabel.styled';
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import { useDispatch } from 'react-redux';
 import { setFilter } from 'redux/filterSlice';
-import { getFilter } from 'redux/selectors';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -11,14 +12,22 @@ const Filter = () => {
     dispatch(setFilter(inputValue));
   };
   return (
-    <label>
-      Filter
-      <input type="text" onChange={onChange} />
-    </label>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        marginTop: '10px',
+      }}
+    >
+      <FormLabel>
+        Filter
+        <FormInput style={{ width: '100%' }} type="text" onChange={onChange} />
+      </FormLabel>
+    </div>
   );
 };
-// Filter.propTypes = {
-//   value: PropTypes.string.isRequired,
-//   onChange: PropTypes.func.isRequired,
-// };
+
 export default Filter;
