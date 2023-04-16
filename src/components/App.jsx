@@ -74,15 +74,13 @@ function App() {
       }}
     >
       <h1>Phonebook</h1>
-      <ContactForm
-      // onSubmit={addContact}
-      ></ContactForm>
+      <ContactForm />
       <h2>Contacts</h2>
-      {/* <Filter value={filter} onChange={getFilter}></Filter> */}
-      <ContactList
-      // contacts={filteredContacts}
-      // onDelete={deleteContact}
-      ></ContactList>
+      <Filter
+      // value={filter}
+      // onChange={getFilter}
+      ></Filter>
+      <ContactList />
     </div>
   );
 }

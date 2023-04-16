@@ -39,12 +39,16 @@ const contactsSlice = createSlice({
         };
       },
     },
+    deleteContact(state, action) {
+      const index = state.findIndex(contact => contact.id === action.payload);
+      state.splice(index, 1);
+    },
   },
 });
 
 export const contactsReducer = contactsSlice.reducer;
 
-export const { addContact } = contactsSlice.actions;
+export const { addContact, deleteContact } = contactsSlice.actions;
 
 //   const addContact = (name, number) => {
 //     const contact = {
@@ -64,4 +68,8 @@ export const { addContact } = contactsSlice.actions;
 //       }
 //       return [contact, ...contacts];
 //     });
+//   };
+
+//   const deleteContact = contactId => {
+//     setContacts(() => contacts.filter(contact => contact.id !== contactId));
 //   };

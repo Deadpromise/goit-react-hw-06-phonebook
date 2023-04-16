@@ -7,8 +7,6 @@ function ContactForm() {
   const dispatch = useDispatch();
   const formSubmit = e => {
     e.preventDefault();
-    console.log(e.target.name.value);
-    console.log(e.target.number.value);
     const form = e.target;
     const nameValue = form.name.value;
     const numberValue = form.number.value;
